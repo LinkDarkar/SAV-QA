@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es" class="theme-dark">
+<head>
+  <meta charset="UTF-8">
+  <title>Log In</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <div class="header-tabs">
+      <img src="https://ionixlatam.com/wp-content/uploads/2023/08/logo-ionix-dark-1.png" srcset="https://ionixlatam.com/wp-content/uploads/2023/08/logo-ionix-dark-1@2x.png 2x" alt="Ionix">
+      <button onclick="switchTheme()" class="btnOpposite">Theme</button>
+      <script>
+        function switchTheme() {
+          const html = document.documentElement;
+          html.classList.toggle('theme-dark');
+          html.classList.toggle('theme-light');
+        }
+      </script>
+    </div>
+  </header>
+
+  <main>
+    <div class="centered">
+      <h1>Iniciar sesión</h1>
+      <p>Ingresa tus datos de inicio de sesión para acceder.</p>
+
+      <form onsubmit="loginSubmit(event)">
+        <div>
+          <label for="email">Correo electrónico</label><br>
+          <input type="email" id="email" name="email" placeholder="ejemplo@dominio.com" required>
+        </div>
+
+        <div>
+          <label for="password">Contraseña</label><br>
+          <input type="password" id="password" name="password" placeholder="pAsSwoRD123" required>
+        </div>
+
+        <p id="error-message" class="error"></p>
+
+        <button type="submit" class="btnPrimary">Log In</button>
+
+      </form>
+    </div>
+  </main>
+
+</body>
+</html>

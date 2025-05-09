@@ -1,0 +1,188 @@
+* {
+    box-sizing: border-box;
+}
+
+/*--- 1. Variables ---*/
+
+/*--- 1.1. Global variables ---*/
+:root {
+    --successColor: #00ff00;
+    --errorColor: #ff0000;
+}
+
+/*--- 1.2. Dark Theme variables ---*/
+.theme-dark
+{
+    --primaryColor: #ed0c34;
+    --secondaryColor: #a0001d;
+    --tertiaryColor: #52000f;
+    
+    --background1: #323232;
+    --background2: #212121;
+    --background9: #e4e4e4;
+    
+    --textColor1: #ffffff;
+    --textColor2: #e0e0e0;
+    --textColor9: #1f1f1f;
+}
+/*--- Light Theme variables ---*/
+.theme-light
+{
+    --primaryColor: #ed0c34;
+    --secondaryColor: #a0001d;
+    --tertiaryColor: #52000f;
+    
+    --background1: #dfdfdf;
+    --background2: #e4e4e4;
+    --background9: #212121;
+    
+    --textColor1: #000000;
+    --textColor2: #1f1f1f;
+    --textColor9: #e0e0e0;
+}
+
+/*--- 2. Styles ---*/
+
+/*--- 2.1. Main parts ---*/
+html, body {
+    background: var(--background1);
+    color: var(--textColor1);
+
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    text-align: center;
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 125%;
+
+    overflow-x: hidden;
+}
+
+.centered {
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 20%;
+    max-width: 90%;
+}
+
+header {
+    background-color:var(--background2);
+
+    width: 100vw;
+    margin: 0;
+    padding: 10px 20px;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    top: 0;
+    left: 0;
+    border-bottom: 0.2em solid var(--primaryColor);
+
+    z-index: 1000;
+}
+
+h1 {
+    font-size: 200%;
+}
+
+h2 {
+    font-size: 150%;
+}
+
+/*--- 2.2. Buttons ---*/
+button {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 16px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+
+.btnPrimary {
+    background-color: var(--primaryColor);
+    color: var(--textColor1);
+}
+.btnPrimary:hover {
+    background-color: var(--primaryColor);
+    color: var(--textColor1);
+}
+.btnPrimary:active {
+    background-color: var(--primaryColor);
+    color: var(--textColor1);
+}
+
+.btnSecondary {
+    background-color: var(--secondaryColor);
+    color: var(--textColor1);
+}
+
+.btnTertiary {
+    background-color: var(--tertiaryColor);
+    color: var(--textColor1);
+}
+
+.btnOpposite {
+    background-color: var(--background9);
+    color: var(--textColor9);
+}
+
+.text-primary {
+    color: var(--textColor1);
+}
+
+.text-secondary {
+    color: #CACACA;
+}
+
+/*--- 2.3. Input fields ---*/
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    background: var(--background2);
+    color: var(--textColor1);
+    border: 1px solid #828282;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+input:focus {
+    outline: none;
+    border-color: var(--primaryColor);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+}
+
+/*--- X. External stuff ---*/
+
+/*--- X.1 Google Icons ---*/
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>File Preview</title>
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    iframe { width: 100%; height: 600px; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+
+<h2>Google Drive File Viewer</h2>
+<p>This example uses OAuth2 to access a private file from your Google Drive.</p>
+<button onclick="handleAuthClick()">Sign In</button>
+<button onclick="loadFile()">Load HTML File</button>
+
+<iframe id="fileViewer" title="Drive HTML File"></iframe>
+
+<script>
+  const CLIENT_ID = '280989012526-k58557athtjuvh69cqqt7gd6gi20smbi.apps.googleusercontent.com';
+  const SCOPES = 'https://www.googleapis.com/auth/drive.readonly';
+  const FILE_ID = '1nlvz_F3zfcOHyxHYSu3ybQ49DqOY29Tb';  // Your private HTML file's ID
+
+  let tokenClient;
+  let accessToken = null;
+
+  function gapiLoaded() {
+    gapi.load('client', async () => {
+      await gapi.client.init({
+        discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/drive/v3/rest']
+      });
+    });
+  }
+
+  window.onload = () => {
+    gapiLoaded();
+
+    tokenClient = google.accounts.oauth2.initTokenClient({
+      client_id: CLIENT_ID,
+      scope: SCOPES,
+      callback: (tokenResponse) => {
+        accessToken = tokenResponse.access_token;
+        console.log("Access granted");
+      },
+    });
+  };
+
+  function handleAuthClick() {
+    tokenClient.requestAccessToken();
+  }
+
+  async function loadFile() {
+    if (!accessToken) {
+      alert("Please sign in first.");
+      return;
+    }
+
+    try {
+      const response = await fetch(`https://www.googleapis.com/drive/v3/files/${FILE_ID}?alt=media`, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`
+        }
+      });
+
+      if (!response.ok) throw new Error("Failed to load file");
+
+      const htmlContent = await response.text();
+      const blob = new Blob([htmlContent], { type: "text/html" });
+      const url = URL.createObjectURL(blob);
+      document.getElementById("fileViewer").src = url;
+    } catch (error) {
+      console.error(error);
+      alert("Failed to load file: " + error.message);
+    }
+  }
+</script>
+
+</body>
+</html>
