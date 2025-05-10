@@ -5,7 +5,8 @@
 /*--- 1. Variables ---*/
 
 /*--- 1.1. Global variables ---*/
-:root {
+:root
+{
     --successColor: #00ff00;
     --errorColor: #ff0000;
 }
@@ -19,6 +20,7 @@
     
     --background1: #323232;
     --background2: #212121;
+    --background3: #0f0f0f;
     --background9: #e4e4e4;
     
     --textColor1: #ffffff;
@@ -34,6 +36,7 @@
     
     --background1: #dfdfdf;
     --background2: #e4e4e4;
+    --background3: #ffffff;
     --background9: #212121;
     
     --textColor1: #000000;
@@ -44,7 +47,8 @@
 /*--- 2. Styles ---*/
 
 /*--- 2.1. Main parts ---*/
-html, body {
+html, body
+{
     background: var(--background1);
     color: var(--textColor1);
 
@@ -63,7 +67,8 @@ html, body {
     overflow-x: hidden;
 }
 
-.centered {
+.centered
+{
     margin: 40px auto;
     padding: 20px;
     text-align: center;
@@ -71,11 +76,13 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-width: 20%;
+    min-width: 50%;
     max-width: 90%;
 }
 
-header {
+/*--- 2.1.1. Header ---*/
+header
+{
     background-color:var(--background2);
 
     width: 100vw;
@@ -92,17 +99,24 @@ header {
 
     z-index: 1000;
 }
+.headerTabs
+{
+    margin-left: auto;
+}
 
-h1 {
+h1
+{
     font-size: 200%;
 }
 
-h2 {
+h2
+{
     font-size: 150%;
 }
 
 /*--- 2.2. Buttons ---*/
-button {
+button
+{
     font-family: "Lexend", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -115,44 +129,53 @@ button {
     border: none;
 }
 
-.btnPrimary {
+.btnPrimary
+{
     background-color: var(--primaryColor);
     color: var(--textColor1);
 }
-.btnPrimary:hover {
+.btnPrimary:hover
+{
     background-color: var(--primaryColor);
     color: var(--textColor1);
 }
-.btnPrimary:active {
+.btnPrimary:active
+{
     background-color: var(--primaryColor);
     color: var(--textColor1);
 }
 
-.btnSecondary {
+.btnSecondary
+{
     background-color: var(--secondaryColor);
     color: var(--textColor1);
 }
 
-.btnTertiary {
+.btnTertiary
+{
     background-color: var(--tertiaryColor);
     color: var(--textColor1);
 }
 
-.btnOpposite {
+.btnOpposite
+{
     background-color: var(--background9);
     color: var(--textColor9);
 }
 
-.text-primary {
+.text-primary
+{
     color: var(--textColor1);
 }
 
-.text-secondary {
+.text-secondary
+{
     color: #CACACA;
 }
 
 /*--- 2.3. Input fields ---*/
-input {
+input
+{
     width: 100%;
     padding: 10px;
     font-size: 1em;
@@ -162,12 +185,14 @@ input {
     border-radius: 5px;
     box-sizing: border-box;
 }
-input:focus {
+input:focus
+{
     outline: none;
     border-color: var(--primaryColor);
 }
 
-form {
+form 
+{
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -179,7 +204,8 @@ form {
 /*--- X. External stuff ---*/
 
 /*--- X.1 Google Icons ---*/
-.material-symbols-outlined {
+.material-symbols-outlined
+{
   font-variation-settings:
   'FILL' 0,
   'wght' 400,

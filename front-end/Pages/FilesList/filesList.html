@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap">
 </head>
 
 <body>
@@ -28,28 +28,8 @@
   </header>
 
   <main>
-    <div class="centered">
-      <h1>Iniciar sesión</h1>
-      <p>Ingresa tus datos de inicio de sesión para acceder.</p>
-      <form onsubmit="loginSubmit(event)">
-        <div>
-          <label for="email">Correo electrónico</label><br>
-          <input type="email" id="email" name="email" placeholder="ejemplo@dominio.com" required>
-        </div>
-
-        <div>
-          <label for="password">Contraseña</label><br>
-          <input type="password" id="password" name="password" placeholder="pAsSwoRD123" required>
-        </div>
-
-        <p id="error-message" class="error"></p>
-
-        <button type="submit" class="btnPrimary">Log In</button>
-      </form>
-
-    </div>
+    <div id="filesList" class="centered"></div>
   </main>
 
 </body>
-
 </html>

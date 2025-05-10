@@ -1,0 +1,27 @@
+.listElement
+{
+    background-color: var(--background2);
+    color: aliceblue;
+
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 16px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+
+    width: 50%;
+
+    margin: auto;
+    margin-bottom: 0.5em;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    border: 0.2em solid var(--background3);
+}
