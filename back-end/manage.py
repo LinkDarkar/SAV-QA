@@ -5,20 +5,18 @@ import tempfile
 import shutil
 import requests
 
+from App import app
+import App.routes
 from GoogleDriveHandler import conectDrive
-
-app = Flask(__name__) # Crear una instancia de la aplicación Flask
 
 ROOT_DIR = os.path.dirname(__file__)
 JSON_FILE_PATH = os.path.join(ROOT_DIR, 'Json', 'redirect.json')  # Ruta al archivo JSON
-TEMP_FOLDER = os.path.join(ROOT_DIR, 'static', 'temp_files') # Ruta para almacenar archivos temporales
-os.makedirs(TEMP_FOLDER, exist_ok=True) # Asegurarse de que la carpeta de archivos temporales exista
+JSON_USERTEST_PATH = os.path.join(ROOT_DIR, 'Json', 'loginTests.json')
+JSON_USERS_PATH = os.path.join(ROOT_DIR, 'Json', 'users.json')
+JSON_COMPANIES_PATH = os.path.join(ROOT_DIR, 'Json', 'companies.json')
+TEMP_FOLDER = os.path.join(ROOT_DIR, 'static', 'temp_files')  # Ruta para almacenar archivos temporales
+os.makedirs(TEMP_FOLDER, exist_ok=True)  # Asegurarse de que la carpeta de archivos temporales exista
 
-@app.route('/list/results')
-def listResults():
-    # Llamada para listar los archivos en Google Drive
-    conectDrive.list_drive_files()
-    return 'Archivos listados en la consola!'
 
 # Ejecutar la aplicación
 if __name__ == '__main__':

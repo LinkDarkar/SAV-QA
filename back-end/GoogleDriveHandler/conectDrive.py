@@ -3,6 +3,7 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
+"""
 # Ruta absoluta al archivo de credenciales, usando os.path
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Obtiene el directorio actual de conectDrive.py
 SERVICE_ACCOUNT_FILE = os.path.join(BASE_DIR, '..', 'service_account', 'sav-qa-cb1d8d7fc5fa.json')
@@ -32,7 +33,7 @@ def list_drive_files():
             # Llamada a la API para listar archivos dentro de una carpeta específica
             results = service.files().list(
                 q=f"'{folder_id}' in parents",  # Filtra archivos dentro de la carpeta especificada
-                pageSize=10, 
+                pageSize=10,
                 fields="nextPageToken, files(id, name)"
             ).execute()
 
@@ -47,3 +48,4 @@ def list_drive_files():
 
         except HttpError as error:
             print(f'Ocurrió un error al listar los archivos: {error}')
+"""
